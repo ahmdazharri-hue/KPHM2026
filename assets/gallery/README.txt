@@ -1,0 +1,1 @@
+Letakkan foto dokumentasi perjalanan Anda di folder ini.

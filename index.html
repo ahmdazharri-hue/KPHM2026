@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243b32">
+  <meta name="description" content="Race Weekend Travel Planner — Run the Race, Explore the Place.">
+  <title>Kulon Progo — Race Weekend Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="announcement"><span class="pulse"></span> RACE WEEKEND PLANNER <span class="announcement-sep">/</span> KULON PROGO, YOGYAKARTA</div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Race Weekend Planner home"><span class="brand-mark">KP<span>↗</span></span><span class="brand-name">FIELD NOTES<small>RUN · TRAVEL · REPEAT</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+    <nav id="mainNav">
+      <a href="#weekend">The weekend</a><a href="#itinerary">Itinerary</a><a href="#discover">Discover</a><a href="#map">Map</a><a href="#planner">My planner</a>
+    </nav>
+    <a class="header-cta" href="#planner">Plan my trip <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-image" role="img" aria-label="Ilustrasi lanskap perbukitan Kulon Progo"></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow light">A RUNNER'S FIELD GUIDE <span>—</span> YOGYAKARTA, INDONESIA</p>
+        <h1>RUN THE<br>RACE.<br><em>EXPLORE</em><br>THE PLACE.</h1>
+        <p class="hero-copy">Satu akhir pekan untuk mengejar personal best, menikmati lanskap, dan menemukan sisi lain Kulon Progo.</p>
+        <div class="hero-actions"><a class="button button-orange" href="#itinerary">Explore the journey <span>↗</span></a><a class="text-link light-link" href="#event">Race information <span>↓</span></a></div>
+      </div>
+      <div class="hero-stamp"><span>FIELD<br>GUIDE</span><b>01</b><small>KP / YK</small></div>
+      <div class="hero-bottom"><span>08° 01' S — 110° 10' E</span><span>RUN · RECOVER · ROAM</span><span>EST. YOUR OWN PACE</span></div>
+    </section>
+
+    <section class="ticker" aria-label="Tagline"><div>RUN LIGHT <i>✳</i> TRAVEL SLOW <i>✳</i> LEAVE ROOM TO EXPLORE <i>✳</i> RUN LIGHT <i>✳</i> TRAVEL SLOW <i>✳</i></div></section>
+
+    <section class="section intro-grid" id="event">
+      <div><p class="eyebrow">01 / THE BIG PICTURE</p><h2>More than<br>a race weekend.</h2></div>
+      <div class="intro-text"><p class="lead">Perjalanan yang dirancang mengikuti ritme seorang runner.</p><p>Sabtu untuk eksplorasi yang terukur. Minggu untuk race, recovery, dan pulang dengan cerita baru. Pilih destinasi, susun rute, dan sesuaikan semuanya dengan energi serta jadwal resmi event.</p><div class="event-status"><span class="status-dot"></span><div><b>Event details are being updated</b><small>Tanggal, kategori, start/finish, dan race schedule belum dikonfirmasi di planner ini.</small></div></div></div>
+    </section>
+
+    <section class="weekend-band" id="weekend">
+      <div class="weekend-heading"><p class="eyebrow light">02 / YOUR WEEKEND, YOUR PACE</p><h2>THE WEEKEND<br><em>AT A GLANCE.</em></h2></div>
+      <article class="day-card saturday"><div class="day-top"><span>DAY 01</span><span>SATURDAY</span></div><div class="day-number">01</div><h3>Explore<br>before the race.</h3><p>Wisata pilihan, pemandangan, makan dengan nyaman, lalu kembali lebih awal untuk race preparation.</p><a href="#itinerary" class="circle-arrow">↘</a><div class="day-foot">LOW-INTENSITY EXPLORATION</div></article>
+      <article class="day-card sunday"><div class="day-top"><span>DAY 02</span><span>SUNDAY</span></div><div class="day-number">02</div><h3>Race.<br>Recover. Repeat.</h3><p>Fokus pada race. Setelah finish, prioritaskan hidrasi, nutrisi, dan recovery sebelum aktivitas ringan.</p><a href="#itinerary" class="circle-arrow">↘</a><div class="day-foot">RACE DAY + RECOVERY</div></article>
+    </section>
+
+    <section class="section itinerary-section" id="itinerary">
+      <div class="section-heading"><div><p class="eyebrow">03 / THE ROUTE</p><h2>Your weekend,<br><em>mapped out.</em></h2></div><p class="section-note">Rencana awal yang fleksibel. Ubah waktu, tambahkan tempat, dan sesuaikan dengan lokasi race serta akomodasi Anda.</p></div>
+      <div class="day-tabs"><button class="day-tab active" data-day="saturday">Saturday <span>01</span></button><button class="day-tab" data-day="sunday">Sunday <span>02</span></button></div>
+      <div class="itinerary-layout"><div class="timeline" id="itineraryList"></div><aside class="itinerary-aside"><div class="aside-label">RUNNER'S NOTE / 01</div><div class="runner-note"><span class="note-icon">✳</span><h3>Save your legs<br>for race day.</h3><p>Hindari trekking berat, aktivitas dengan banyak tanjakan, dan agenda yang membuat waktu istirahat berkurang.</p></div><div class="mini-stat"><span>TRAVEL STYLE</span><b>Slow & intentional</b></div><div class="mini-stat"><span>RACE DETAILS</span><b class="muted">Awaiting official info</b></div></aside></div>
+    </section>
+
+    <section class="discover-section" id="discover">
+      <div class="section discover-head"><div><p class="eyebrow light">04 / GO A LITTLE FURTHER</p><h2>Find your<br><em>next stop.</em></h2></div><p>Mulai dari lanskap alam hingga tempat untuk mengisi energi. Informasi operasional dan biaya perlu diverifikasi sebelum kunjungan.</p></div>
+      <div class="search-wrap"><span>⌕</span><input id="destinationSearch" type="search" placeholder="Search places, e.g. Waduk Sermo..." aria-label="Cari destinasi"><button id="clearSearch" aria-label="Hapus pencarian">×</button></div>
+      <div class="filters" id="categoryFilters"><button class="filter active" data-category="all">All places</button><button class="filter" data-category="nature">Nature</button><button class="filter" data-category="viewpoint">Viewpoints</button><button class="filter" data-category="culture">Culture</button><button class="filter" data-category="culinary">Culinary</button></div>
+      <div class="destination-grid" id="destinationGrid"></div>
+      <p class="data-disclaimer">＊ Informasi destinasi merupakan data awal / needs verification. Periksa akses, jam buka, cuaca, dan kondisi terkini sebelum berangkat.</p>
+    </section>
+
+    <section class="map-section section" id="map">
+      <div class="section-heading"><div><p class="eyebrow">05 / GETTING THERE</p><h2>See the bigger<br><em>picture.</em></h2></div><p class="section-note">Peta demo menampilkan area tujuan secara konseptual. Aktifkan Google Maps API untuk pencarian tempat dan rute langsung.</p></div>
+      <div class="map-panel"><div class="map-art"><div class="map-grid"></div><div class="map-river"></div><div class="map-road road-one"></div><div class="map-road road-two"></div><div class="map-label label-sermo">WADUK SERMO <span>01</span></div><div class="map-label label-mudal">SUNGAI MUDAL <span>02</span></div><div class="map-label label-pule">PULE PAYUNG <span>03</span></div><div class="map-center">KULON<br>PROGO<span>YOGYAKARTA · ID</span></div><div class="map-pin pin-a">01</div><div class="map-pin pin-b">02</div><div class="map-pin pin-c">03</div><div class="map-legend">MAP PREVIEW · NOT TO SCALE</div></div><div class="map-controls"><div class="map-mode"><span class="eyebrow">MAP SEARCH</span><h3>Explore nearby.</h3><p>Integrasi Google Maps dapat diaktifkan melalui pengaturan API di README.</p><input id="mapSearch" type="search" placeholder="Search a place..."><button class="button button-dark" id="mapSearchBtn">Search on Google Maps ↗</button><div class="map-shortcuts"><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Waduk+Sermo+Kulon+Progo">Waduk Sermo ↗</a><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sungai+Mudal+Kulon+Progo">Sungai Mudal ↗</a></div></div><div class="map-coordinates"><span>FIELD COORDINATES</span><b>08° 01' S</b><b>110° 10' E</b></div></div></div>
+    </section>
+
+    <section class="planner-section" id="planner">
+      <div class="section planner-heading"><div><p class="eyebrow light">06 / MAKE IT YOURS</p><h2>Your trip.<br><em>Your call.</em></h2></div><p>Tempat yang dipilih, anggaran, dan persiapan race tersimpan di browser perangkat ini.</p></div>
+      <div class="planner-grid">
+        <div class="planner-card itinerary-builder"><div class="planner-card-head"><div><span class="eyebrow">01 / SAVED STOPS</span><h3>My itinerary</h3></div><span class="count-pill" id="savedCount">0 STOPS</span></div><div class="saved-tabs"><button class="saved-tab active" data-saved-day="saturday">Saturday</button><button class="saved-tab" data-saved-day="sunday">Sunday</button></div><div id="savedStops" class="saved-stops"><p class="empty-state">Belum ada destinasi. Tambahkan tempat dari Discover.</p></div><button class="outline-button" id="clearStops">Clear this day ×</button></div>
+        <div class="planner-card budget-card"><div class="planner-card-head"><div><span class="eyebrow">02 / KEEP TRACK</span><h3>Budget planner</h3></div><span class="count-pill">IDR</span></div><label class="field-label" for="budgetName">Expense description</label><input id="budgetName" placeholder="e.g. Fuel, lunch, parking"><label class="field-label" for="budgetAmount">Amount (IDR)</label><input id="budgetAmount" type="number" min="0" placeholder="0"><button class="button button-dark full-button" id="addExpense">+ Add expense</button><div id="expenseList" class="expense-list"></div><div class="budget-total"><span>ESTIMATED SPEND</span><b id="budgetTotal">Rp0</b></div></div>
+        <div class="planner-card checklist-card"><div class="planner-card-head"><div><span class="eyebrow">03 / RACE READY</span><h3>Runner's checklist</h3></div><span class="count-pill" id="checkProgress">0 / 9</span></div><div class="progress-track"><span id="checkProgressBar"></span></div><div id="checklistItems" class="checklist-items"></div></div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery"><div class="section-heading"><div><p class="eyebrow">07 / MOMENTS & MILESTONES</p><h2>Collect the<br><em>good stuff.</em></h2></div><p class="section-note">Ruang dokumentasi untuk menyimpan momen perjalanan dan race weekend Anda.</p></div><div class="gallery-grid"><div class="gallery-tile gallery-one"><span>01 / THE LANDSCAPE</span><b>Find your<br>quiet place.</b></div><div class="gallery-tile gallery-two"><span>02 / THE PROCESS</span><b>One step<br>at a time.</b></div><div class="gallery-tile gallery-three"><span>03 / THE FINISH</span><b>Earned,<br>not given.</b></div></div><p class="gallery-caption">Visual ilustratif / placeholder. Ganti dengan foto perjalanan Anda pada folder <code>assets/gallery</code>.</p></section>
+
+    <section class="event-kit">
+      <div><p class="eyebrow light">08 / OFFICIAL EVENT KIT</p><h2>Race details<br><em>matter.</em></h2><p>Tambahkan materi resmi ketika tersedia agar semua informasi race berada di satu tempat.</p></div>
+      <div class="kit-list"><div><span>01</span><b>Official event poster</b><small>Belum tersedia · upload poster resmi</small></div><div><span>02</span><b>Race guide & technical handbook</b><small>Belum tersedia · tambahkan PDF</small></div><div><span>03</span><b>Race route & schedule</b><small>Belum tersedia · verifikasi dari penyelenggara</small></div><a href="https://www.google.com/search?q=Kulon+Progo+Half+Marathon+official" target="_blank" rel="noopener" class="kit-link">Find official event updates ↗</a></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#top"><span class="brand-mark">KP<span>↗</span></span><span class="brand-name">FIELD NOTES<small>RUN · TRAVEL · REPEAT</small></span></a><p>RUN THE RACE, EXPLORE THE PLACE.</p><span>MADE FOR THE JOURNEY · 2026</span></footer>
+
+  <div class="modal-backdrop" id="destinationModal" aria-hidden="true"><section class="destination-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Tutup">×</button><div class="modal-visual" id="modalVisual"><span>DESTINATION FIELD NOTE</span></div><div class="modal-content"><p class="eyebrow" id="modalCategory">DESTINATION</p><h2 id="modalTitle">Place name</h2><p id="modalDescription"></p><div class="modal-facts" id="modalFacts"></div><div class="modal-tabs"><button class="modal-tab active" data-modal-tab="overview">Overview</button><button class="modal-tab" data-modal-tab="information">Information</button><button class="modal-tab" data-modal-tab="route">Route</button></div><div class="modal-tab-content" id="modalTabContent"></div><div class="modal-actions"><button class="button button-orange" id="addSaturday">+ Saturday</button><button class="button button-dark" id="addSunday">+ Sunday</button><a class="text-link" id="modalMapsLink" target="_blank" rel="noopener">Open Maps ↗</a></div></div></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="data/config.js"></script>
+  <script src="js/destinations.js"></script>
+  <script src="js/itinerary.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/maps.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

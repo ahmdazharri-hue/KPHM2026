@@ -1,0 +1,9 @@
+{
+  "name": "kulon-progo-race-weekend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static race weekend travel planner",
+  "scripts": {
+    "serve": "python -m http.server 8000"
+  }
+}

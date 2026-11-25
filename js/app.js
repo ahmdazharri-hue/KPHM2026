@@ -1,0 +1,36 @@
+(()=>{
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const STORE="kp-race-weekend-v1";
+const defaultState={saved:{saturday:[],sunday:[]},savedDay:"saturday",expenses:[],checked:[]};
+let state={...defaultState,...JSON.parse(localStorage.getItem(STORE)||"{}")};
+const checklist=["Running shoes","Race bib & pins","Running apparel","Hydration bottle","Race nutrition","Personal identification","Race kit / documents","Travel essentials","Recovery essentials"];
+const safe=(s)=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function save(){localStorage.setItem(STORE,JSON.stringify(state));}
+function money(n){return new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n||0);}
+function toast(msg){const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>el.classList.remove("show"),2300);}
+function renderTimeline(day){$("#itineraryList").innerHTML=window.ITINERARY_TEMPLATES[day].map(x=>`<div class="timeline-item"><div class="time">${safe(x.time)}</div><div class="timeline-content"><span class="tag">${safe(x.tag)}</span><h3>${safe(x.title)}</h3><p>${safe(x.description)}</p><div class="timeline-meta">${safe(x.meta)}</div></div></div>`).join("");$$(".day-tab").forEach(b=>b.classList.toggle("active",b.dataset.day===day));}
+function renderSaved(){const day=state.savedDay,arr=state.saved[day]||[];$("#savedStops").innerHTML=arr.length?arr.map(id=>{const d=DESTINATIONS.find(x=>x.id===id);return d?`<div class="saved-stop"><span>${safe(d.name)}</span><button data-remove="${id}" aria-label="Hapus ${safe(d.name)}">Remove ×</button></div>`:""}).join(""):`<p class="empty-state">Belum ada destinasi. Tambahkan tempat dari Discover.</p>`;$("#savedCount").textContent=Object.values(state.saved).reduce((a,x)=>a+x.length,0)+" STOPS";$$("[data-remove]").forEach(b=>b.onclick=()=>{state.saved[day]=state.saved[day].filter(x=>x!==b.dataset.remove);save();renderSaved();});$$(".saved-tab").forEach(b=>b.classList.toggle("active",b.dataset.savedDay===day));}
+function renderBudget(){const list=$("#expenseList");list.innerHTML=state.expenses.map((x,i)=>`<div class="expense-row"><span>${safe(x.name)}</span><span>${money(x.amount)} <button data-expense="${i}" aria-label="Hapus pengeluaran">×</button></span></div>`).join("");$("#budgetTotal").textContent=money(state.expenses.reduce((a,x)=>a+x.amount,0));$$("[data-expense]").forEach(b=>b.onclick=()=>{state.expenses.splice(+b.dataset.expense,1);save();renderBudget();});}
+function renderChecklist(){const done=state.checked.length;$("#checkProgress").textContent=`${done} / ${checklist.length}`;$("#checkProgressBar").style.width=(done/checklist.length*100)+"%";$("#checklistItems").innerHTML=checklist.map((x,i)=>`<label class="check-item"><input type="checkbox" data-check="${i}" ${state.checked.includes(i)?"checked":""}><span>${x}</span></label>`).join("");$$("[data-check]").forEach(c=>c.onchange=()=>{const i=+c.dataset.check;state.checked=c.checked?[...new Set([...state.checked,i])]:state.checked.filter(x=>x!==i);save();renderChecklist();});}
+function openDestination(id){const d=DESTINATIONS.find(x=>x.id===id);if(!d)return;window.__activeDestination=id;$("#modalCategory").textContent=d.categoryLabel+" · NEEDS VERIFICATION";$("#modalTitle").textContent=d.name;$("#modalDescription").textContent=d.description;$("#modalVisual").className="modal-visual "+d.art;$("#modalFacts").innerHTML=`<span>LOCATION<br><b>${safe(d.address)}</b></span><span>PRICE<br><b>${safe(d.price)}</b></span>`;$("#modalMapsLink").href="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(d.maps);showModalTab("overview");$("#destinationModal").classList.add("open");$("#destinationModal").setAttribute("aria-hidden","false");}
+function showModalTab(tab){const d=DESTINATIONS.find(x=>x.id===window.__activeDestination);$$(".modal-tab").forEach(b=>b.classList.toggle("active",b.dataset.modalTab===tab));const content={overview:`<b>About this place</b><br>${safe(d.description)}<br><br><b>Category:</b> ${safe(d.categoryLabel)}`,information:`<b>Opening hours:</b> ${safe(d.hours)}<br><b>Entrance fee:</b> ${safe(d.price)}<br><b>Facilities:</b> ${safe(d.facilities)}<br><br>Informasi belum diverifikasi. Hubungi pengelola atau periksa kanal resmi sebelum berkunjung.`,route:`Rute dan estimasi waktu belum dihitung dalam demo mode.<br><br><a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(d.maps)}">Open directions in Google Maps ↗</a>`};$("#modalTabContent").innerHTML=content[tab];}
+function addToDay(day){const id=window.__activeDestination;if(!id)return;if(!state.saved[day].includes(id))state.saved[day].push(id);save();state.savedDay=day;renderSaved();$("#destinationModal").classList.remove("open");$("#destinationModal").setAttribute("aria-hidden","true");toast("Ditambahkan ke itinerary "+(day==="saturday"?"Saturday":"Sunday"));}
+window.App={openDestination,toast};
+$("#destinationSearch").addEventListener("input",e=>{DestinationUI.query=e.target.value;DestinationUI.render();});
+$("#clearSearch").onclick=()=>{$("#destinationSearch").value="";DestinationUI.query="";DestinationUI.render();};
+$$(".filter").forEach(b=>b.onclick=()=>{$$(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");DestinationUI.activeCategory=b.dataset.category;DestinationUI.render();});
+$$(".day-tab").forEach(b=>b.onclick=()=>renderTimeline(b.dataset.day));
+$$(".saved-tab").forEach(b=>b.onclick=()=>{state.savedDay=b.dataset.savedDay;save();renderSaved();});
+$("#clearStops").onclick=()=>{state.saved[state.savedDay]=[];save();renderSaved();toast("Destinasi hari ini dihapus.");};
+$("#addExpense").onclick=()=>{const name=$("#budgetName").value.trim(),amount=Number($("#budgetAmount").value);if(!name||!Number.isFinite(amount)||amount<=0){toast("Isi deskripsi dan nominal yang valid.");return;}state.expenses.push({name,amount});$("#budgetName").value="";$("#budgetAmount").value="";save();renderBudget();};
+$("#modalClose").onclick=()=>{$("#destinationModal").classList.remove("open");$("#destinationModal").setAttribute("aria-hidden","true");};
+$("#destinationModal").onclick=e=>{if(e.target.id==="destinationModal")$("#modalClose").click();};
+$$(".modal-tab").forEach(b=>b.onclick=()=>showModalTab(b.dataset.modalTab));
+$("#addSaturday").onclick=()=>addToDay("saturday");$("#addSunday").onclick=()=>addToDay("sunday");
+$("#mapSearchBtn").onclick=()=>MapUI.search($("#mapSearch").value);
+$("#mapSearch").addEventListener("keydown",e=>{if(e.key==="Enter")MapUI.search(e.target.value);});
+$("#menuToggle").onclick=()=>{const nav=$("#mainNav"),open=nav.classList.toggle("open");$("#menuToggle").setAttribute("aria-expanded",String(open));};
+$$('#mainNav a').forEach(a=>a.onclick=()=>$("#mainNav").classList.remove("open"));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){$("#destinationModal").classList.remove("open");$("#destinationModal").setAttribute("aria-hidden","true");}});
+renderTimeline("saturday");DestinationUI.render();renderSaved();renderBudget();renderChecklist();
+})();

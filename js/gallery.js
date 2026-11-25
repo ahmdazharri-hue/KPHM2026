@@ -1,0 +1,2 @@
+/* Galeri awal memakai tile CSS sebagai placeholder; ganti dengan dokumentasi asli di assets/gallery. */
+window.GalleryUI = { note:"Tambahkan foto milik Anda ke assets/gallery dan sesuaikan markup gallery pada index.html." };

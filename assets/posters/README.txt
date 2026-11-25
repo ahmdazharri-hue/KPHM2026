@@ -1,0 +1,1 @@
+Letakkan poster resmi event di folder ini setelah tersedia. Jangan gunakan materi yang belum terverifikasi.
