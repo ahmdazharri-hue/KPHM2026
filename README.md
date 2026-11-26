@@ -23,7 +23,7 @@ kulon-progo-race-weekend/
 │   ├── app.js
 │   ├── destinations.js
 │   ├── itinerary.js
-│   ├── gallery.js
+│   ├── extras.js
 │   └── maps.js
 ├── data/
 │   ├── config.js
@@ -81,3 +81,8 @@ Semua path menggunakan relative path sehingga cocok untuk project site GitHub Pa
 - Data destinasi belum diverifikasi. Jam buka, tiket, dan fasilitas tidak dikarang.
 - Data planner tersimpan di browser perangkat yang sama.
 - Itinerary rinci menunggu Excel Master Database.
+
+## Versi race week (26 November 2026)
+- `js/extras.js`: hitung mundur ke 29 November 2026 04.30 WIB dan tampilan gambar diperbesar.
+- Jarak, syarat race pack, mantra, dan cerita Beyond the Run mengikuti kphm.myendura.id dan email penyelenggara.
+- Jangan pernah mengunggah pass RPC, QR, atau data peserta ke repository.

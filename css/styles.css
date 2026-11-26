@@ -128,3 +128,94 @@
 @media(max-width:760px){.exclusive{padding:65px 6%}.shots.three,.shots.two,.philosophy{grid-template-columns:1fr}.scenery-mosaic{grid-template-columns:1fr 1fr;gap:8px}}
 @media(max-width:650px){.destination-grid{grid-template-columns:1fr}.destination-art{height:190px}.checklist-items{grid-template-columns:1fr}}
 @media(max-width:420px){.brand-name{display:none}.scenery-mosaic{grid-template-columns:1fr}.scenery-mosaic .wide{grid-column:auto;aspect-ratio:3/2}}
+
+/* Versi race week */
+:root{--gold-ink:#7d5f14}
+body{font-size:15px}
+.section{padding:80px 10%}
+.eyebrow{color:var(--gold-ink)}.eyebrow.light{color:#e7cd84}
+.header-cta{white-space:nowrap}
+.hero{height:auto;min-height:600px;display:flex;align-items:center}
+.hero-content{position:relative;inset:auto;left:auto;top:auto;right:auto;max-width:720px;padding:70px 10%}
+.hero h1{font-size:clamp(48px,6.6vw,92px);line-height:.95;letter-spacing:-.5px}
+.hero-date{font:600 clamp(18px,2vw,23px) var(--display);color:#f0d78e;margin:22px 0 8px}
+.hero-copy{font-size:15px;max-width:460px;margin:0 0 26px}
+.countdown{display:flex;gap:10px;flex-wrap:wrap;min-height:92px;align-content:flex-start}
+.countdown small{width:100%;font-size:12px;color:#d5deea}
+.countdown span{min-width:68px;padding:9px 6px;text-align:center;background:rgba(4,19,39,.72);border:1px solid rgba(214,180,94,.55);font-size:12px}
+.countdown b{display:block;font:600 28px var(--display);color:#fff;font-variant-numeric:tabular-nums}
+.countdown p{margin:0;font-weight:700}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(8,29,56,.25);border-bottom:4px solid var(--gold)}
+.quick a{background:var(--gold);color:var(--deep-navy);padding:18px 12px;text-align:center}
+.quick a:hover,.quick a:focus-visible{background:#e7cd84}
+.quick b{display:block;font:600 19px var(--display)}.quick span{font-size:12px}
+.race-cards{grid-template-columns:repeat(4,1fr);margin-top:26px}
+.race-card{background:#fff}
+.race-start{margin:16px 0 8px;font-size:13px}.race-start span{display:block;color:var(--muted)}.race-start b{font:600 40px var(--display);color:var(--navy);margin-right:5px}
+.race-card dl{width:100%;margin:0 0 10px}.race-card dl div{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding:7px 0}.race-card dt{margin:0}
+.race-card details{font-size:13px;margin-bottom:14px}.race-card summary{cursor:pointer;font-weight:700;padding:4px 0}
+.race-card .text-link{margin-top:auto}
+.rpc{display:grid;grid-template-columns:1fr 1.2fr;gap:8%;align-items:start;background:var(--paper)}
+.rpc h2{margin-bottom:22px}.rpc-when{font-size:19px;line-height:1.6}.rpc>div>p{line-height:1.7}
+.rpc-lists{display:grid;gap:12px}
+.rpc-box{background:#fff;margin:0;padding:22px;font-size:14px}.rpc-box ul{padding-left:18px;margin:8px 0}.rpc-box.warn{border-left:4px solid var(--gold)}
+.pen{background:var(--white)}
+.table-wrap{overflow-x:auto;margin:22px 0}
+.pen table{width:100%;border-collapse:collapse;font-size:14px;text-align:center}
+.pen th,.pen td{border:1px solid var(--line);padding:14px 8px}.pen thead th{background:var(--navy);color:#fff}.pen tbody th{background:var(--paper);text-align:left}
+.beyond{background:var(--deep-navy);color:#fff}.beyond h2{color:#fff}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.story-grid article{border-top:3px solid var(--gold);background:rgba(255,255,255,.06);padding:22px}
+.story-grid h3{font:600 25px var(--display);margin:0 0 8px}.story-grid p{margin:0;line-height:1.7;color:#d5deea}
+.mantra{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:0 0 24px}.mantra dt{font-weight:700;color:#e7cd84}.mantra dd{margin:5px 0 0;color:#d5deea;font-size:13px}
+.beyond .text-link{color:#fff}
+.itinerary-layout{grid-template-columns:1.8fr .8fr}
+.destination-info p,.timeline-content p,.section-note,.discover-head>p,.planner-heading>p,.runner-note p{font-size:14px}
+.destination-info p,.section-note,.timeline-content p,.empty-state,.gallery-caption{color:#4f5c6d}
+.verify-tag{color:#8a4a2f;letter-spacing:0}
+.show-all{display:block;margin:26px auto 0;padding:14px 26px;background:var(--gold);color:var(--deep-navy);border:0;font-weight:700;cursor:pointer}
+.show-all[hidden]{display:none}
+.data-disclaimer{color:#c7d1df}
+.check-item{font-size:13px}.filter,.day-tab,.saved-tab,.modal-tab{font-size:13px}.filter{min-height:40px}
+.official-links{padding:50px 10%;background:var(--paper);text-align:center}
+.official-links h2{font:600 32px var(--display);color:var(--navy);margin:0 0 18px}
+.official-links div{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.official-links a{border:1px solid var(--navy);padding:12px 18px;font-weight:700;font-size:13px}
+.official-links p{font-size:13px;color:#4f5c6d}
+.scenery-mosaic figure.wide{grid-column:span 2}
+.lightbox{border:0;padding:0;background:transparent;max-width:min(94vw,860px);max-height:94vh;overflow:auto}
+.lightbox::backdrop{background:rgba(4,12,24,.92)}
+.lightbox img{display:block;max-width:100%;max-height:90vh;width:auto;height:auto;margin:auto}
+.lightbox form{position:sticky;top:0;height:0;text-align:right;z-index:2}
+.lightbox button{width:44px;height:44px;border:0;background:#fff;color:#081d38;font-size:26px;cursor:pointer}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:3px solid #2f80ed;outline-offset:2px}
+.menu-toggle{min-width:44px;min-height:44px}
+@media(min-width:761px){.site-header nav{display:flex;position:static;flex-direction:row;background:none;border:0;padding:0;gap:28px}.menu-toggle{display:none}}
+@media(max-width:1100px){.race-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.brand-name{display:none}}
+@media(max-width:760px){
+ .site-header nav{display:none;position:absolute;flex-direction:column;top:100%;left:0;right:0;background:var(--paper);padding:10px 7% 18px;gap:4px}.site-header nav.open{display:flex}.site-header nav a{padding:10px 0;font-size:15px}
+ .section{padding:60px 6%}.hero{min-height:0}.hero-content{padding:48px 6%}
+ .quick{grid-template-columns:1fr 1fr}
+ .rpc,.story-grid,.itinerary-layout{grid-template-columns:1fr}.mantra{grid-template-columns:1fr 1fr}
+ .exclusive .shots{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;padding-bottom:10px}
+ .exclusive .shots a{flex:0 0 80%;scroll-snap-align:start}
+ .philosophy{grid-template-columns:1fr 1fr;gap:14px}
+ .pen table{font-size:12px}.pen th,.pen td{padding:10px 4px}
+}
+@media(max-width:560px){.race-cards{grid-template-columns:1fr}.scenery-mosaic{grid-template-columns:1fr 1fr}.scenery-mosaic figure.wide{grid-column:1/-1;aspect-ratio:3/2}.scenery-mosaic figure{aspect-ratio:1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:560px){
+ .destination-card{display:grid;grid-template-columns:112px 1fr}
+ .destination-art{height:auto;min-height:132px}
+ .destination-art .art-code,.destination-art .art-type,.destination-info p,.destination-bottom{display:none}
+ .destination-info{display:flex;flex-direction:column;justify-content:center;gap:4px}
+ .destination-topline{flex-direction:column;gap:3px;font-size:11px}
+ .destination-info h3{margin:6px 0 0}
+ .discover-head{padding-bottom:0}
+}
+.hero-content{max-width:960px}
+.hero h1{font-size:clamp(42px,6vw,86px)}
+.day-tab{padding:13px 14px}
+@media(max-width:560px){.scenery-mosaic figure:last-child{grid-column:1/-1;aspect-ratio:3/2}}
+@media(max-width:760px){.hero-image{background:linear-gradient(rgba(5,20,41,.78),rgba(5,20,41,.66)),url(../assets/scenery/tumpeng.webp) center/cover}.hero-copy{color:#fff}}
