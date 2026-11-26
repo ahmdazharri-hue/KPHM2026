@@ -100,3 +100,11 @@ Semua path menggunakan relative path sehingga cocok untuk project site GitHub Pa
 
 ## QA yang dilakukan
 Pemeriksaan statis pada file dan referensi path dilakukan saat paket dibuat. Interaksi dirancang untuk browser modern. Belum dilakukan pengujian lintas perangkat fisik, validasi API Google, atau verifikasi operasional destinasi secara langsung.
+
+
+## Integrasi aset resmi KPHM 2026
+- Seluruh 81 aset gambar dari arsip `KPHM2026.zip` ditempatkan di `assets/kphm/`.
+- Gambar dikonversi ke WebP (quality 84) untuk mengurangi ukuran unduhan; arsip asli tetap menjadi sumber.
+- `assets/kphm/manifest.json` memuat kategori, nama file sumber, dan dimensi gambar.
+- Galeri, identitas logo, hero, serta Official Event Kit menggunakan aset lokal.
+- Foto promosi dipertahankan; jangan menganggap teks poster sebagai pengganti verifikasi informasi terbaru.
