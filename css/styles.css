@@ -219,3 +219,57 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{o
 .day-tab{padding:13px 14px}
 @media(max-width:560px){.scenery-mosaic figure:last-child{grid-column:1/-1;aspect-ratio:3/2}}
 @media(max-width:760px){.hero-image{background:linear-gradient(rgba(5,20,41,.78),rgba(5,20,41,.66)),url(../assets/scenery/tumpeng.webp) center/cover}.hero-copy{color:#fff}}
+
+/* ===== Logo baru ===== */
+.brand-logo{width:auto;height:46px;max-width:none;border-radius:0;background:none;object-fit:contain}
+.brand-name{display:block;font-size:10px;line-height:1.2;letter-spacing:2px;padding-left:12px;margin-left:4px;border-left:1px solid rgba(16,47,88,.25)}
+.brand-name small{font-size:10px;letter-spacing:2px;margin-top:0}
+.footer-brand .brand-logo{background:#fff;padding:6px 10px;border-radius:8px;height:52px}
+.footer-brand .brand-name{color:#f4efe5;border-left-color:rgba(255,255,255,.3)}
+@media(max-width:560px){.brand-logo{height:38px}.brand-name{display:block;font-size:9px;padding-left:8px}.footer-brand .brand-logo{height:44px}}
+/* ===== Empat makna ===== */
+.about-lead{max-width:680px;font-size:15px;line-height:1.8;color:#d5deea;margin:0 0 6px}
+.mantra{gap:22px}
+.mantra>div{background:rgba(255,255,255,.06);border-top:3px solid var(--gold);padding:20px 18px}
+.mantra img{display:block;width:72px;height:72px;margin:0 0 12px}
+.mantra dd b{display:block;color:#fff;font-size:14px;margin-bottom:6px}
+.mantra dd span{display:block;line-height:1.6}
+/* ===== Info hari-H & peraturan ===== */
+.info-gap{background:var(--paper);border-left:4px solid var(--gold);padding:18px 22px;margin:26px 0 0;font-size:14px;line-height:1.7}
+.info-gap h3{font:600 22px var(--display);color:var(--navy);margin:0 0 6px}
+.info-gap p{margin:0}
+.rules-list{margin-top:28px;max-width:860px;border-top:1px solid var(--line)}
+.rules-list details{border-bottom:1px solid var(--line);padding:2px 0}
+.rules-list summary{cursor:pointer;font-weight:700;color:var(--navy);padding:16px 4px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.rules-list summary::-webkit-details-marker{display:none}
+.rules-list summary:after{content:"+";color:#a9822d;font-size:20px;line-height:1}
+.rules-list details[open] summary:after{content:"–"}
+.rules-list ul{margin:0 0 16px;padding-left:22px;font-size:14px;line-height:1.75;color:var(--ink)}
+/* ===== Course Detail ===== */
+.course-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0 22px}
+.course-tab{border:1px solid var(--navy);background:transparent;color:var(--navy);padding:12px 18px;font:700 13px var(--body);cursor:pointer;min-height:44px}
+.course-tab.active{background:var(--navy);color:#fff}
+.course-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.course-stats>div{border:1px solid var(--line);border-top:3px solid var(--gold);padding:14px 16px;background:#fff}
+.course-stats span{display:block;font-size:11px;letter-spacing:1px;color:var(--muted);text-transform:uppercase;margin-bottom:4px}
+.course-stats b{font:600 22px var(--display);color:var(--navy)}
+.course-extra{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.course-extra>div{background:var(--paper);padding:16px 18px;font-size:14px;line-height:1.7}
+.course-extra h4,.elev-card h4{margin:0 0 6px;font:600 18px var(--display);color:var(--navy)}
+.course-extra p{margin:0}
+.elev-card{background:var(--deep-navy);color:#d5deea;padding:20px;margin:12px 0}
+.elev-card h4{color:#e7cd84}
+.elev-card.empty p{margin:6px 0 14px}.elev-card.empty .text-link{color:#fff}
+.elev-svg{width:100%;height:auto;display:block;touch-action:pan-y}
+.elev-svg text{fill:#aebdd0;font:11px var(--body)}
+.elev-svg .g{stroke:rgba(255,255,255,.14);stroke-width:1}
+.elev-svg .ln{fill:none;stroke:#e7cd84;stroke-width:2.2;stroke-linejoin:round}
+.elev-svg .cur{stroke:#fff;stroke-width:1;stroke-dasharray:3 3}
+.elev-svg #cDot{fill:#e7cd84;stroke:#fff;stroke-width:2}
+.elev-svg #cTxt{fill:#fff;font-weight:700;font-size:13px}
+.elev-meta{font-size:13px;margin:10px 0 2px}.elev-note{font-size:12px;color:#93a4ba;margin:0}
+.course-note{font-size:13px;color:var(--muted);line-height:1.7;margin:10px 0}
+@media(max-width:700px){.course-stats{grid-template-columns:1fr 1fr}.course-extra{grid-template-columns:1fr}.course-tab{flex:1 1 40%}}
+@media(max-width:380px){.course-stats{grid-template-columns:1fr}}
+.course .data-disclaimer{color:#5b6677}
+@media(max-width:700px){.elev-svg text{font-size:18px}.elev-svg #cTxt{font-size:19px}.elev-card{padding:14px 10px}}

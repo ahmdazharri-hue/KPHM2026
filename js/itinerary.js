@@ -1,10 +1,10 @@
 window.ITINERARY_TEMPLATES = {
  saturday:[
-  {time:"10:00–20:00",title:"Ambil race pack",tag:"RACE PACK",description:"Di ibis Yogyakarta International Airport. Bawa pass RPC dari email dan identitas asli. Lewati jika sudah diambil pada Jumat, 27 November.",meta:"27–28 November 2026 · atur waktunya di sela agenda Sabtu"},
   {time:"08:00",title:"Sarapan dan mulai santai",tag:"MULAI RINGAN",description:"Sarapan, cek kondisi tubuh, dan mulai perjalanan tanpa terburu-buru.",meta:"Durasi fleksibel · lokasi dekat akomodasi"},
   {time:"09:30",title:"Pemandangan di Waduk Sermo",tag:"INTENSITAS RINGAN",description:"Nikmati pemandangan dan dokumentasi singkat. Hindari aktivitas fisik berat atau berjalan terlalu jauh.",meta:"Durasi saran 45–60 menit · akses perlu diverifikasi"},
   {time:"11:30",title:"Makan siang dan hidrasi",tag:"ISI TENAGA",description:"Makan siang dengan menu yang familier. Penuhi kebutuhan cairan dan hindari mencoba makanan yang berisiko mengganggu pencernaan.",meta:"Pilih tempat sesuai rute aktual"},
-  {time:"13:00",title:"Kunjungan singkat (opsional)",tag:"TETAP RINGAN",description:"Pilih satu destinasi yang paling dekat dan mudah diakses. Lewati agenda ini jika lelah atau cuaca tidak mendukung.",meta:"Opsional · jangan mengejar banyak lokasi"},
+  {time:"13:00",title:"Ambil race pack",tag:"RACE PACK",description:"Di Ibis Yogyakarta International Airport. Bawa QR Race Pack (dari halaman registrasi MyEndura atau PDF e-ticket) dan identitas asli. Lewati jika sudah diambil pada Jumat, 27 November.",meta:"Buka 10.00–20.00 WIB, 27–28 November 2026 · jam 13.00 hanya contoh"},
+  {time:"14:30",title:"Kunjungan singkat (opsional)",tag:"TETAP RINGAN",description:"Pilih satu destinasi yang paling dekat dan mudah diakses. Lewati agenda ini jika lelah atau cuaca tidak mendukung.",meta:"Opsional · jangan mengejar banyak lokasi"},
   {time:"15:30",title:"Kembali dan siapkan lomba",tag:"PERSIAPAN",description:"Kembali ke akomodasi, siapkan race kit, periksa informasi penyelenggara, makan malam lebih awal, dan istirahat.",meta:"Prioritas: istirahat dan tidur cukup"}
  ],
  sunday:[

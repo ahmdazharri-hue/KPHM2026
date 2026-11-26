@@ -4,10 +4,10 @@ const STORE="kp-race-weekend-v1";
 const defaultState={saved:{saturday:[],sunday:[]},savedDay:"saturday",expenses:[],checked:[]};
 let stored={};try{stored=JSON.parse(localStorage.getItem(STORE)||"{}")}catch(e){}
 let state={...defaultState,...stored};
-const checklist=["Sepatu lari","BIB & peniti","Pakaian lari","Botol minum","Nutrisi lomba","Identitas asli","Race pack & dokumen","Perlengkapan perjalanan","Perlengkapan pemulihan","Pass RPC (ponsel atau cetak)"];
+const checklist=["Sepatu lari","BIB & peniti","Pakaian lari","Botol minum","Nutrisi lomba","Identitas asli","Race pack & dokumen","Perlengkapan perjalanan","Perlengkapan pemulihan","QR Race Pack (ponsel atau cetak)"];
 const safe=(s)=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const ID=v=>({"Please verify with venue":"Tanyakan ke pengelola","Information unavailable":"Belum tersedia","Needs verification":"Belum dipastikan","Search current listings":"Cek daftar terkini","Menu prices unavailable":"Belum tersedia","Varies by venue":"Berbeda tiap tempat"})[v]||v;
-function save(){localStorage.setItem(STORE,JSON.stringify(state));}
+function save(){try{localStorage.setItem(STORE,JSON.stringify(state));}catch(e){/* penyimpanan dinonaktifkan (mis. mode privat): data tetap jalan selama halaman terbuka */}}
 function money(n){return new Intl.NumberFormat("id-ID",{style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n||0);}
 function toast(msg){const el=$("#toast");el.textContent=msg;el.classList.add("show");clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>el.classList.remove("show"),2300);}
 function renderTimeline(day){$("#itineraryList").innerHTML=window.ITINERARY_TEMPLATES[day].map(x=>`<div class="timeline-item"><div class="time">${safe(x.time)}</div><div class="timeline-content"><span class="tag">${safe(x.tag)}</span><h3>${safe(x.title)}</h3><p>${safe(x.description)}</p><div class="timeline-meta">${safe(x.meta)}</div></div></div>`).join("");$$(".day-tab").forEach(b=>b.classList.toggle("active",b.dataset.day===day));}

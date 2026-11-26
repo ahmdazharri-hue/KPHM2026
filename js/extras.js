@@ -1,7 +1,8 @@
 /* Hitung mundur ke flag-off pertama dan tampilan gambar diperbesar */
 (()=>{
   const el=document.getElementById("countdown");
-  const start=Date.parse("2026-11-29T04:30:00+07:00"), end=Date.parse("2026-11-29T08:30:00+07:00");
+  const C=window.RACE_CONFIG||{};
+  const start=Date.parse(C.flagOff||"2026-11-29T04:30:00+07:00"), end=Date.parse(C.lastCutOff||"2026-11-29T08:30:00+07:00");
   function tick(){
     const now=Date.now();
     if(now>=end){el.innerHTML="<p>KPHM 2026 telah berlangsung. Terima kasih, sampai jumpa!</p>";return;}

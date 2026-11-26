@@ -1,88 +1,49 @@
-# Kulon Progo Race Weekend Planner
+# Kulon Progo Race Weekend
 
-Website statis untuk merencanakan perjalanan race weekend dengan konsep **Run the Race, Explore the Place**.
+Panduan perjalanan peserta, keluarga, dan pendamping Kulon Progo Half Marathon (KPHM) 2026.
+"Run the Race. Explore the Place." Melengkapi, bukan menggantikan, situs resmi https://kphm.myendura.id/
 
-## Fitur versi pertama
-- Landing page editorial dan responsive.
-- Template itinerary Saturday dan Sunday.
-- Destination search + category filter.
-- Destination detail modal dengan tab Overview, Information, dan Route.
-- Add/remove destinasi ke itinerary.
-- Budget planner dengan kalkulasi total.
-- Runner's checklist dengan progress.
-- Tautan pencarian dan arah Google Maps.
-- Penyimpanan itinerary, checklist, dan pengeluaran di `localStorage`.
+Website statis (HTML, CSS, JavaScript) tanpa backend dan tanpa API berbayar. Cocok untuk GitHub Pages.
 
-## Struktur folder
+## Isi halaman
+Hero + hitung mundur · Jadwal & rute 4 kategori · **Course Detail + profil elevasi** · Race pack · Start pen · **Peraturan lomba** · Beyond the Run + **4 makna KPHM** · Itinerary Sabtu/Minggu · Jelajah destinasi · Medali & Jersey · Peta (tautan Google Maps) · Rencanaku (tempat, anggaran, checklist; tersimpan di browser).
+
+## Struktur
 ```text
-kulon-progo-race-weekend/
-├── index.html
-├── README.md
-├── css/styles.css
-├── js/
-│   ├── app.js
-│   ├── destinations.js
-│   ├── itinerary.js
-│   ├── extras.js
-│   └── maps.js
-├── data/
-│   ├── config.js
-│   └── destinations.js
-└── assets/
-    ├── images/
-    ├── posters/
-    ├── gallery/
-    └── icons/
+index.html
+css/styles.css
+js/        app.js  destinations.js  itinerary.js  maps.js  course.js  extras.js
+data/      config.js  destinations.js  course-profiles.js
+assets/
+  logo/      kphm-logo.webp (logo baru), favicon.png
+  mantra/    logo 4 makna KPHM
+  kphm/      materi visual resmi KPHM 2026
+  scenery/   potongan foto latar dari materi Scenery & Destination
 ```
 
-## Cara menjalankan
-1. Ekstrak ZIP.
-2. Buka `index.html` di browser. Fitur dasar berjalan tanpa backend.
-3. Untuk pengalaman lokal yang lebih konsisten, jalankan server statis sederhana, misalnya ekstensi **Live Server** di VS Code.
+## Cara mengubah data
+- **Jadwal/jarak/race pack:** teks ada langsung di `index.html`; jadwal juga di `js/itinerary.js`.
+- **Course Detail:** `js/course.js` (objek `COURSES`).
+- **Profil elevasi:** `data/course-profiles.js`. Saat ini hanya 5K (dari file GPX). Untuk kategori lain, tambahkan kunci `"hm"`, `"10k"`, atau `"jd"` dengan bentuk `{gpxKm, min, max, points:[[km, elevasi], ...]}`; grafik muncul otomatis. Sumbu Y grafik diatur di `js/course.js` (`yMin`, `yMax`); sesuaikan bila rentang elevasi berbeda.
+- **Hitung mundur:** `data/config.js` (`flagOff`, `lastCutOff`).
+- **Destinasi:** `data/destinations.js`. Isi `address`, `hours`, dll. hanya bila ada sumber resmi; selain itu biarkan "Belum tersedia".
 
-## Konfigurasi event
-Edit `data/config.js`:
-- `eventDate`: isi `YYYY-MM-DD` setelah tanggal resmi dikonfirmasi.
-- `raceCategory`: kategori yang diikuti.
-- `startFinish`: lokasi resmi start/finish.
-- `organizerUrl`: tautan penyelenggara resmi.
-
-
-## Peta dan navigasi
-Website memakai tautan Google Maps (search dan directions). Tidak memerlukan API key atau biaya.
-
-## Mengganti poster resmi
-Simpan poster di `assets/posters/`, lalu tambahkan elemen gambar/link pada section `Official Event Kit` di `index.html`. Pastikan materi berasal dari kanal resmi penyelenggara.
-
-## Menambah destinasi
-Edit `data/destinations.js`. Setiap destinasi memakai properti:
-`id`, `name`, `category`, `categoryLabel`, `code`, `art`, `description`, `address`, `hours`, `price`, `facilities`, `maps`.
-Kategori yang didukung: `nature`, `viewpoint`, `culture`, `culinary`.
-Gunakan `Information unavailable` atau `Please verify with venue` bila data belum tersedia.
-
-## Mengubah itinerary
-Edit `window.ITINERARY_TEMPLATES` pada `js/itinerary.js`. Jangan menetapkan jam race sebelum race schedule resmi tersedia.
-
-## Foto
-Materi asli ada di `assets/kphm/`. Latar foto yang dipotong dari materi Scenery & Destination ada di `assets/scenery/`. Foto destinasi diatur lewat properti `photo` dan `source` di `data/destinations.js`.
+## Aturan data
+- Jangan mengarang nama tempat, harga, jarak, waktu, menu, atau jam buka.
+- Jangan menaruh QR Race Pack, nomor BIB, nama, email, atau data peserta apa pun di repository ini.
+- Harga pendaftaran tidak ditampilkan.
 
 ## Deploy ke GitHub Pages
-1. Buat repository GitHub baru.
-2. Upload seluruh isi folder proyek (bukan folder ZIP-nya).
-3. Buka **Settings → Pages**.
-4. Pada Build and deployment pilih **Deploy from a branch**.
-5. Pilih branch `main` dan folder `/ (root)`, lalu Save.
-6. Tunggu proses deployment dan buka URL Pages yang diberikan GitHub.
+1. Buat repository baru di GitHub.
+2. Upload **isi** folder proyek (bukan folder pembungkusnya) ke branch `main`.
+3. Settings → Pages → Deploy from a branch → `main` / `(root)` → Save.
+4. Tunggu beberapa menit, lalu buka URL yang diberikan. Semua path relatif.
 
-Semua path menggunakan relative path sehingga cocok untuk project site GitHub Pages.
+## Uji lokal
+Buka `index.html` di browser, atau jalankan `python -m http.server 8000` lalu buka http://localhost:8000.
 
-## Batasan dan status data
-- Jadwal, rute, dan race pack mengikuti materi KPHM 2026; cek perubahan dari penyelenggara.
-- Data destinasi belum diverifikasi. Jam buka, tiket, dan fasilitas tidak dikarang.
-- Data planner tersimpan di browser perangkat yang sama.
-- Itinerary rinci menunggu Excel Master Database.
-
-## Versi race week (26 November 2026)
-- `js/extras.js`: hitung mundur ke 29 November 2026 04.30 WIB dan tampilan gambar diperbesar.
-- Jarak, syarat race pack, mantra, dan cerita Beyond the Run mengikuti kphm.myendura.id dan email penyelenggara.
-- Jangan pernah mengunggah pass RPC, QR, atau data peserta ke repository.
+## Status data (26 November 2026)
+- Jadwal, jarak, race pack, dan Course Detail mengikuti kphm.myendura.id.
+- Gambar rute lama memakai angka 21,1 / 10,5 / 5,2 / 0,74 km dan elevasi yang berbeda dari situs; yang dipakai adalah angka situs.
+- Data destinasi belum diverifikasi.
+- Info parkir, penutupan jalan, antar-jemput, dan kontak medis/darurat belum dipublikasikan penyelenggara.
